@@ -21,7 +21,7 @@ public class lesson_1 {
                                 
         Random random = new Random();
       
-        int i = random.nextInt(2001)- 1000;
+        int i = random.nextInt(2001) - 1000;
 		System.out.println("i = " + i);
         int nAbs = Math.abs(i); // Абсолютное значение числа
         n = Integer.toBinaryString(nAbs);// Число в двоичной системе
@@ -29,25 +29,24 @@ public class lesson_1 {
 
         File file_m1 = new File ("file_m1.xls"); 
         FileWriter fileWriter = new FileWriter(file_m1.getAbsoluteFile());
-        StringBuilder stringBuilder1 = new StringBuilder();{ 
-            for (int j = i; j < Short.MAX_VALUE; j++){
-            if (j % n.length() == 0);{
+        StringBuilder stringBuilder1 = new StringBuilder(); 
+        for (int j = i; j < Short.MAX_VALUE; j++) {
+            if (j % n.length() == 0) {
                 stringBuilder1.append(j + "  ");
                 fileWriter.append(String.valueOf(j + " "));
                 }
-            }
-        } fileWriter.flush(); 
+        }
+        fileWriter.flush(); 
 
         File file_m2 = new File ("file_m2.xls"); 
         FileWriter fileWriter2 = new FileWriter(file_m2.getAbsoluteFile());
-        StringBuilder stringBuilder2 = new StringBuilder();{ 
-            for (int j = Short.MIN_VALUE; j < i; j++){
-            if (j % n.length() != 0);{
-                stringBuilder2.append(j + "  ");
-                fileWriter2.append(String.valueOf(j + " "));
-                }
+        StringBuilder stringBuilder2 = new StringBuilder();
+        for (int j = Short.MIN_VALUE; j < i; j++) {
+        if (j % n.length() != 0) {
+            stringBuilder2.append(j + "  ");
+            fileWriter2.append(String.valueOf(j + " "));
             }
-        } fileWriter.flush(); 
-
+        }
+        fileWriter.flush(); 
     }
 }
