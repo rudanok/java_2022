@@ -13,28 +13,34 @@ public class lesson_5 {
 
     public static void main(String[] args) {
 
+        // Создаём словарь HashMap и заполняем его тремя элементами
         Map<Integer, String> map = new HashMap<>();
         map.put(0, "white");
         map.put(1, "gray");
         map.put(2, "black");
         System.out.println(map);
 
+        // Изменяем значения словаря, добавляя "!"
         Set<Integer> keySet = map.keySet();
         for (int i : keySet) {
             map.compute(i, (k, v) -> v = v + "!");
         }
         System.out.println(map);
 
+        // Увеличиваем количество элементов до 1000 со случайными ключами
         while (map.size() < 1000) {
             int key = rnd(3, 10000000);
             map.put(key, "value"); 
         }
         System.out.println(map.size());
 
+        // Создаём коллекцию TreeMap и заполняем её тремя элементами
         Map<Integer, String> treeMap = new TreeMap<>();
         treeMap.put(3, "red");
         treeMap.put(2, "yellow");
         treeMap.put(1, "green");
+
+        // Выводим TreeMap на печать, чтобы убедиться в сортировке по ключам
         System.out.println(treeMap);
 
     }
